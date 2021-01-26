@@ -12,17 +12,24 @@ module.exports = {
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react', '@babel/preset-env']
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+          plugins: [
+            ['@babel/plugin-proposal-class-properties', {'loose': true}]
+          ]
         }
       }]
     }]
   },
   output: {
     path: __dirname + "/src/",
-    filename: "client.min.js"
+    filename: "client.min.js",
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true
   },
   plugins: debug ? [] : [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ]
+  ],
 }
