@@ -1,3 +1,3 @@
-import { Dispacher } from 'flux'
+import { Dispatcher } from 'flux'
 
-export default new Dispacher()
+export default new Dispatcher()
