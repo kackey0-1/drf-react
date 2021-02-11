@@ -21,12 +21,12 @@ export function reloadTodos() {
       {
         id: 213464613,
         text: 'Go Shopping Again',
-        completed: false
+        complete: false
       },
       {
         id: 213464679,
         text: 'Sleep At The Yard',
-        completed: true
+        complete: true
       },
     ]})
   }, 1000)
